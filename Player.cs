@@ -12,19 +12,27 @@ namespace SudokuApplication
         public string Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int NumberOfPlayedGames { get; set; }
+        public int NumberOfEasyGames { get; set; }
+        public int NumberOfMediumGames { get; set; }
+        public int NumberOfHardGames { get; set; }
+        public int GameDifficulty { get; set; }
+        public string selectedGame { get; set; } // LAIKINAS!!!
 
         //how to describe saved games?
         public Player()
         {
 
         }
-        public Player(string Name, string Username, string Password, int NumberOfPlayedGames)
+        public Player(string Name, string Username, string Password, int NumberOfEasyGames, 
+            int NumberOfMediumGames, int NumberOfHardGames)
         {
             this.Name = Name;
             this.Username = Username;
             this.Password = Password;
-            this.NumberOfPlayedGames = NumberOfPlayedGames;
+            this.NumberOfEasyGames = NumberOfEasyGames;
+            this.NumberOfMediumGames = NumberOfMediumGames;
+            this.NumberOfHardGames = NumberOfHardGames; 
+            GameDifficulty = 1;
         }
 
         public List<Player> GetPlayerList(SqlConnection connection)
@@ -44,7 +52,9 @@ namespace SudokuApplication
                             reader["player_name"].ToString(),
                             reader["player_username"].ToString(),
                             reader["player_password"].ToString(),
-                            Convert.ToInt32(reader["finished_games"]));
+                            Convert.ToInt32(reader["easy_games"]),
+                            Convert.ToInt32(reader["medium_games"]),
+                            Convert.ToInt32(reader["hard_games"]));
 
                         playerList.Add(player);
                     }
@@ -62,8 +72,8 @@ namespace SudokuApplication
         public void CreateNewPlayer (SqlConnection connection, string name, string username, string password)
         {
 
-            string query = $"INSERT INTO dbo.player (player_name, player_username, player_password, finished_games) " +
-                $"VALUES ('{name}', '{username}', '{password}', 0)";
+            string query = $"INSERT INTO dbo.player (player_name, player_username, player_password, easy_games, medium_games, hard_games) " +
+                $"VALUES ('{name}', '{username}', '{password}', 0, 0, 0)";
 
             SqlCommand cmd = new SqlCommand (query, connection);
 

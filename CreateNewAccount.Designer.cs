@@ -61,6 +61,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(136, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -93,6 +94,7 @@
             // 
             this.label_username.AutoSize = true;
             this.label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_username.ForeColor = System.Drawing.Color.White;
             this.label_username.Location = new System.Drawing.Point(142, 92);
             this.label_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_username.Name = "label_username";
@@ -104,6 +106,7 @@
             // 
             this.label_password.AutoSize = true;
             this.label_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_password.ForeColor = System.Drawing.Color.White;
             this.label_password.Location = new System.Drawing.Point(142, 2);
             this.label_password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_password.Name = "label_password";
@@ -126,6 +129,7 @@
             // 
             this.label_repeatPassword.AutoSize = true;
             this.label_repeatPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_repeatPassword.ForeColor = System.Drawing.Color.White;
             this.label_repeatPassword.Location = new System.Drawing.Point(122, 219);
             this.label_repeatPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_repeatPassword.Name = "label_repeatPassword";
@@ -135,7 +139,10 @@
             // 
             // button_signUp
             // 
+            this.button_signUp.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button_signUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_signUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_signUp.ForeColor = System.Drawing.Color.Aqua;
             this.button_signUp.Location = new System.Drawing.Point(71, 300);
             this.button_signUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_signUp.Name = "button_signUp";
@@ -144,10 +151,15 @@
             this.button_signUp.Text = "Sign Up";
             this.button_signUp.UseVisualStyleBackColor = true;
             this.button_signUp.Click += new System.EventHandler(this.button_signUp_Click);
+            this.button_signUp.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.button_signUp.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // button_back
             // 
+            this.button_back.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_back.ForeColor = System.Drawing.Color.White;
             this.button_back.Location = new System.Drawing.Point(183, 300);
             this.button_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_back.Name = "button_back";
@@ -156,11 +168,13 @@
             this.button_back.Text = "Back";
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            this.button_back.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.button_back.MouseHover += new System.EventHandler(this.button_MouseLeave);
             // 
             // label_passwordRule
             // 
             this.label_passwordRule.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_passwordRule.ForeColor = System.Drawing.Color.Red;
+            this.label_passwordRule.ForeColor = System.Drawing.Color.Gold;
             this.label_passwordRule.Location = new System.Drawing.Point(0, 52);
             this.label_passwordRule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_passwordRule.Name = "label_passwordRule";
@@ -173,7 +187,7 @@
             // label_wrongUsername
             // 
             this.label_wrongUsername.AutoSize = true;
-            this.label_wrongUsername.ForeColor = System.Drawing.Color.Red;
+            this.label_wrongUsername.ForeColor = System.Drawing.Color.Gold;
             this.label_wrongUsername.Location = new System.Drawing.Point(106, 137);
             this.label_wrongUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_wrongUsername.Name = "label_wrongUsername";
@@ -186,6 +200,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(289, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(16, 18);
@@ -207,6 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(346, 368);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label_wrongUsername);

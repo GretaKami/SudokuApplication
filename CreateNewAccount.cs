@@ -26,9 +26,9 @@ namespace SudokuApplication
         {
             label_wrongUsername.Visible = false;
             label_passwordRule.Visible = false;
-            label_username.ForeColor = Color.Black;
-            label_password.ForeColor = Color.Black;
-            label_repeatPassword.ForeColor = Color.Black;
+            label_username.ForeColor = Color.White;
+            label_password.ForeColor = Color.White;
+            label_repeatPassword.ForeColor = Color.White;
             
 
             Regex regex = new Regex("((\\w*[A-Z]+?\\w*)(\\w*\\d+?\\w*))|((\\w*\\d+?\\w*)(\\w*[A-Z]+?\\w*))");
@@ -38,30 +38,30 @@ namespace SudokuApplication
             {
                 MessageBox.Show("All fields must be filled in!");
             }
-            else if (!LogIn.Player.IsUsernameValid(textBox_username.Text, LogIn.PlayerList))
+            else if (LogIn.Player.IsUsernameValid(textBox_username.Text, LogIn.PlayerList) == false)
             {
                 label_wrongUsername.Visible = true;
-                label_username.ForeColor = Color.Red;
+                label_username.ForeColor = Color.Gold;
                 MessageBox.Show("This username is already used!");
             }
             else if(textBox_password.Text.Length < 5)
             {
                 MessageBox.Show("Password must be at least 5 characters long!");
-                label_password.ForeColor= Color.Red;
+                label_password.ForeColor= Color.Gold;
                 label_passwordRule.Text = "Password must be at least 5 characters long!";
                 label_passwordRule.Visible = true;
             }
             else if (!regex.IsMatch(textBox_password.Text))
             {
                 MessageBox.Show("Password must contain at least 1 number and 1 upper case letter!");
-                label_password.ForeColor = Color.Red;
+                label_password.ForeColor = Color.Gold;
                 label_passwordRule.Text = "Password must contain at least 1 number and 1 upper case letter!";
                 label_passwordRule.Visible = true;
             }
             else if (textBox_password.Text != textBox_repeatPassword.Text)
             {
                 MessageBox.Show("Repeated password doesn't match! Please try again");
-                label_repeatPassword.ForeColor = Color.Red;
+                label_repeatPassword.ForeColor = Color.Gold;
                                
             }
             else
@@ -70,6 +70,7 @@ namespace SudokuApplication
                     textBox_password.Text);
 
                 MessageBox.Show("New account created successfully! Please log in!");
+                closeApplication = false;
                 this.Close();
                 LogIn.FormList[0].Show();
             }
@@ -89,5 +90,26 @@ namespace SudokuApplication
         {
             if(closeApplication) { Application.Exit(); }
         }
+
+        private void button_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.White;
+            button.ForeColor = Color.Black;
+        }
+
+        private void button_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.Maroon;
+
+            if (button == button_signUp)
+            {
+                button.ForeColor = Color.Aqua;
+            }
+            else { button.ForeColor = Color.White; }
+
+        }
+
     }
 }
