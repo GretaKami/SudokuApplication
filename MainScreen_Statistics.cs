@@ -24,8 +24,8 @@ namespace SudokuApplication
             label_mediumGamesNR.Text = LogIn.Player.NumberOfMediumGames.ToString();
             label_hardGamesNR.Text = LogIn.Player.NumberOfHardGames.ToString();
 
-            // add label value for number of saved games!!!
-
+            label_savedGamesNR.Text = LogIn.SavedGamesList.Count.ToString();
+            
         }
 
         private bool closeApplication = true;

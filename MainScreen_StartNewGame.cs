@@ -22,7 +22,7 @@ namespace SudokuApplication
         private void button_startGame_Click(object sender, EventArgs e)
         {
             closeApplication = false;
-            // add functionality to generate new game game
+            // add functionality to generate new game
         }
 
         private Button button_selectedDifficultyLevel = new Button();

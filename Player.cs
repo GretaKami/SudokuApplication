@@ -9,6 +9,7 @@ namespace SudokuApplication
 {
     public class Player
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -23,9 +24,10 @@ namespace SudokuApplication
         {
 
         }
-        public Player(string Name, string Username, string Password, int NumberOfEasyGames, 
+        public Player(int ID, string Name, string Username, string Password, int NumberOfEasyGames, 
             int NumberOfMediumGames, int NumberOfHardGames)
         {
+            this.ID = ID;
             this.Name = Name;
             this.Username = Username;
             this.Password = Password;
@@ -49,6 +51,7 @@ namespace SudokuApplication
                     while (reader.Read())
                     {
                         Player player = new Player(
+                            Convert.ToInt32(reader["ID"]),
                             reader["player_name"].ToString(),
                             reader["player_username"].ToString(),
                             reader["player_password"].ToString(),
@@ -102,6 +105,40 @@ namespace SudokuApplication
             }
             
             return isUsernameValid;
+        }
+
+        public List<Gameboard> GetSavedGameList (SqlConnection connection)
+        {
+            List<Gameboard> savedGamesList = new List<Gameboard>();
+
+            string query = "SELECT * FROM dbo.saved_games";
+
+            SqlCommand cmd = new SqlCommand (query, connection);
+
+            try {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if(Convert.ToInt32(reader["playerID"]) == ID)
+                        {
+                            Gameboard gameboard = new Gameboard(
+                                Convert.ToInt32(reader["ID"]),
+                                Convert.ToInt32(reader["playerID"]),
+                                Convert.ToInt32(reader["difficulty"]));
+
+                            savedGamesList.Add(gameboard);
+                        }
+                    }
+                    reader.Close();
+                }
+
+                
+            }
+            catch (Exception ex) { Console.WriteLine("Error - " + ex.Message); }
+
+            return savedGamesList;
+            
         }
     }
 }

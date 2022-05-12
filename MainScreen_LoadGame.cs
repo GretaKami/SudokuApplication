@@ -16,35 +16,32 @@ namespace SudokuApplication
         {
             InitializeComponent();
 
-            // add function to put saved game list to list view
-            //    string selectedGameInfo = listView_savedGames.SelectedItems[0].SubItems[1].Text;
-            //    LogIn.Player.selectedGame = selectedGameInfo; // this part will need to be changed to select a game to load from the list
+            foreach (Gameboard savedGame in LogIn.SavedGamesList)
+            {
+                ListViewItem item = new ListViewItem(savedGame.ID.ToString());
+                item.SubItems.Add(savedGame.DifficultyString);
+                // add solved percentage!!!
+
+                listView_loadGame.Items.Add(item);
+            }
+           
             
         }
 
 
-
-        //int ID = 1;
-        //string difficulty = "easy";
-        //string solvedGamePercentage = "25%";
-
-        //ListViewItem item = new ListViewItem(ID.ToString());
-        //item.SubItems.Add(difficulty);
-        //item.SubItems.Add(solvedGamePercentage);
-        //listView_savedGames.Items.Add(item);
-
-        //ID = 2;
-        //difficulty = "medium";
-        //solvedGamePercentage = "50%";
-        //ListViewItem item2 = new ListViewItem(ID.ToString());
-        //item2.SubItems.Add(difficulty);
-        //item2.SubItems.Add(solvedGamePercentage);
-        //listView_savedGames.Items.Add(item2);
-
         private bool closeApplication = true;
+        
+
+        private void listView_loadGame_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            button_startGame.Enabled = true;
+        }
+
         private void button_startGame_Click(object sender, EventArgs e)
         {
+            int selectedGameID = Convert.ToInt32(listView_loadGame.SelectedItems[0].SubItems[0].Text);
             closeApplication = false;
+      
             // add functionality to start a loaded game!!!
         }
 
@@ -80,5 +77,7 @@ namespace SudokuApplication
         {
             if (closeApplication) { Application.Exit(); }
         }
+
+        
     }
 }

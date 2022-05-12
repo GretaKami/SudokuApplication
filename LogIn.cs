@@ -21,6 +21,8 @@ namespace SudokuApplication
 
         public static List<Form> FormList = new List<Form>();
 
+        public static List<Gameboard> SavedGamesList = new List<Gameboard>();
+
         public LogIn()
         {
             InitializeComponent();
@@ -39,6 +41,7 @@ namespace SudokuApplication
                 if(player.Username == textBox_username.Text && player.Password == textBox_password.Text)
                 {
                     Player = player;
+                    SavedGamesList = LogIn.Player.GetSavedGameList(LogIn.Connection.conn);
                     logIn = true;
                     break;
 
