@@ -14,7 +14,7 @@ namespace SudokuApplication
         public int Difficulty { get; set; }
         public string DifficultyString { get; set; }
         public int [,] GameBoardNumbers { get; set; }
-        public int SolvedPart { get; set; }
+        public string SolvedPart { get; set; }
 
 
         public Gameboard(int ID, int PlayerID, int Difficulty)
@@ -36,13 +36,26 @@ namespace SudokuApplication
                     break;
             }
             GameBoardNumbers = new int[9, 9];
+            CalulateSolvedPart();
         }
         // add code that generates a new game board!!!
         // add function to calculate solved part!
 
-        private void CalulateSolvedPart()
+        private void CalulateSolvedPart() //change it, so it calculates CORRECTLY solved part!
+                                          //save original gameboard and compare it to solved parts
         {
+            int zeroCounter = 0;
+            foreach(int number in GameBoardNumbers)
+            {
+                if (number == 0) { zeroCounter++; }
+            }
 
+            if(zeroCounter > 0)
+            {
+                SolvedPart = ((GameBoardNumbers.Length / zeroCounter) * 100).ToString() + "%";
+            }
+            else { SolvedPart = "100%"; }
+            
         }
 
         public void SaveGame(SqlConnection connection)

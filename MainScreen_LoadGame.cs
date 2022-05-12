@@ -20,8 +20,8 @@ namespace SudokuApplication
             {
                 ListViewItem item = new ListViewItem(savedGame.ID.ToString());
                 item.SubItems.Add(savedGame.DifficultyString);
-                // add solved percentage!!!
-
+                item.SubItems.Add(savedGame.SolvedPart);
+                
                 listView_loadGame.Items.Add(item);
             }
            
