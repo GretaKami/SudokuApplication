@@ -1,4 +1,8 @@
-﻿namespace SudokuApplication
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace SudokuApplication
 {
     partial class Form1
     {
@@ -28,13 +32,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
         }
 
-        #endregion
+
+        private Panel panelBoard;
+        private Button button1;
+        private Button ChooseLevel;
+        private RadioButton EasyButton;
+        private RadioButton ButtonHard;
+        private RadioButton MediumButton;
+
     }
 }
 
+#endregion
