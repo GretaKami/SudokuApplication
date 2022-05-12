@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,7 @@ namespace SudokuApplication
         public Form1()
         {
             InitializeComponent();
+
             createCells();
         }
 
@@ -85,6 +86,9 @@ namespace SudokuApplication
                 ButtonHard.PerformClick();
 
             }
+
+            label1.Text = LogIn.Player.selectedGame;
+
         }
     }
 }
