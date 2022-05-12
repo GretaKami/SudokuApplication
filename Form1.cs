@@ -15,6 +15,7 @@ namespace SudokuApplication
         public Form1()
         {
             InitializeComponent();
+            label1.Text = LogIn.Player.selectedGame;
         }
     }
 }
