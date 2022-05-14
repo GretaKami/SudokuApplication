@@ -15,6 +15,7 @@ namespace SudokuApplication
         public MainScreen_LoadGame()
         {
             InitializeComponent();
+            LogIn.SavedGamesList = LogIn.Player.GetSavedGameList(LogIn.Connection.conn);
 
             foreach (Gameboard savedGame in LogIn.SavedGamesList)
             {
@@ -23,8 +24,7 @@ namespace SudokuApplication
                 item.SubItems.Add(savedGame.SolvedPart);
                 
                 listView_loadGame.Items.Add(item);
-            }
-           
+            }           
             
         }
 
@@ -40,9 +40,12 @@ namespace SudokuApplication
         private void button_startGame_Click(object sender, EventArgs e)
         {
             int selectedGameID = Convert.ToInt32(listView_loadGame.SelectedItems[0].SubItems[0].Text);
+            LogIn.Player.selectedGameID = selectedGameID;
             closeApplication = false;
-      
-            // add functionality to start a loaded game!!!
+
+            new Form1().Show();
+            this.Close();
+            
         }
 
         private void button_back_Click(object sender, EventArgs e)

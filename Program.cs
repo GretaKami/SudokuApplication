@@ -19,6 +19,8 @@ namespace SudokuApplication
 
             LogIn logIn = new LogIn();
             Application.Run(logIn);
+
+            //Application.Run(new Form1());
         }
     }
 }

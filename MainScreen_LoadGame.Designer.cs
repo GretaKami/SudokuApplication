@@ -127,6 +127,7 @@
             this.Controls.Add(this.listView_loadGame);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainScreen_LoadGame";

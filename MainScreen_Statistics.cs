@@ -15,6 +15,7 @@ namespace SudokuApplication
         public MainScreen_Statistics()
         {
             InitializeComponent();
+            LogIn.SavedGamesList = LogIn.Player.GetSavedGameList(LogIn.Connection.conn);
             label1.Text = $"{LogIn.Player.Name}'s statistics";
 
             label_finishedGamesNR.Text = (LogIn.Player.NumberOfEasyGames + LogIn.Player.NumberOfMediumGames +

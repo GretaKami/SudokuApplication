@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SudokuApplication
 {
@@ -17,7 +18,7 @@ namespace SudokuApplication
         public int NumberOfMediumGames { get; set; }
         public int NumberOfHardGames { get; set; }
         public int GameDifficulty { get; set; }
-        public string selectedGame { get; set; } // LAIKINAS!!!
+        public int selectedGameID { get; set; } // LAIKINAS!!!
 
         //how to describe saved games?
         public Player()
@@ -35,6 +36,7 @@ namespace SudokuApplication
             this.NumberOfMediumGames = NumberOfMediumGames;
             this.NumberOfHardGames = NumberOfHardGames; 
             GameDifficulty = 1;
+            selectedGameID = 0;
         }
 
         public List<Player> GetPlayerList(SqlConnection connection)
@@ -122,10 +124,29 @@ namespace SudokuApplication
                     {
                         if(Convert.ToInt32(reader["playerID"]) == ID)
                         {
+                            int[,] OriginalGridValues = new int[9, 9];
+                            int[,]  OriginalShownGridNumbers = new int[9, 9];
+                            int[,]  EnteredGridNumbers = new int[9, 9];
+
+                            int counter = 0;
+                            for (int row = 0; row < 9; row++)
+                            {
+                                for (int col = 0; col < 9; col++)
+                                {
+                                    OriginalGridValues[row, col] = (int)Char.GetNumericValue(reader["numbers_string"].ToString(), counter);
+                                    OriginalShownGridNumbers[row, col] = (int)Char.GetNumericValue(reader["originalShownGridNumbers_string"].ToString(), counter);
+                                    EnteredGridNumbers[row, col] = (int)Char.GetNumericValue(reader["enteredGridNumbers_string"].ToString(), counter);
+                                    counter++;
+                                }
+                            }
+
                             Gameboard gameboard = new Gameboard(
                                 Convert.ToInt32(reader["ID"]),
                                 Convert.ToInt32(reader["playerID"]),
-                                Convert.ToInt32(reader["difficulty"]));
+                                Convert.ToInt32(reader["difficulty"]),
+                                OriginalGridValues,
+                                OriginalShownGridNumbers,
+                                EnteredGridNumbers);
 
                             savedGamesList.Add(gameboard);
                         }
@@ -135,10 +156,35 @@ namespace SudokuApplication
 
                 
             }
-            catch (Exception ex) { Console.WriteLine("Error - " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("Error - " + ex.Message); }
 
             return savedGamesList;
             
+        }
+
+        public void UpdateGameStatistics(SqlConnection connection)
+        {
+            switch (GameDifficulty)
+            {
+                case 1:
+                    NumberOfEasyGames++;
+                    break;
+                case 2:
+                    NumberOfMediumGames++;
+                    break;
+                case 3:
+                    NumberOfHardGames++;
+                    break;
+            }
+
+            string query = $"UPDATE dbo.player SET easy_games={NumberOfEasyGames}, medium_games={NumberOfMediumGames}, " +
+                $"hard_games={NumberOfHardGames} WHERE ID={ID}";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try { cmd.ExecuteNonQuery(); }
+            catch (Exception ex) { MessageBox.Show("Error - " + ex.Message); }
+
         }
     }
 }

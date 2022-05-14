@@ -96,14 +96,9 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="SudokuCells.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-
     <Compile Include="Gameboard.cs" />
     <EmbeddedResource Include="CreateNewAccount.resx">
       <DependentUpon>CreateNewAccount.cs</DependentUpon>
@@ -126,7 +121,6 @@
     <EmbeddedResource Include="MainScreen_Statistics.resx">
       <DependentUpon>MainScreen_Statistics.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

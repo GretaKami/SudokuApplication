@@ -31,20 +31,20 @@ namespace SudokuApplication
             PlayerList = Player.GetPlayerList(Connection.conn);
 
         }
-        private void button_login_Click(object sender, EventArgs e)
+
+        private void LogInFunction()
         {
             bool logIn = false;
             PlayerList = Player.GetPlayerList(Connection.conn);
 
             foreach (Player player in PlayerList)
             {
-                if(player.Username == textBox_username.Text && player.Password == textBox_password.Text)
+                if (player.Username == textBox_username.Text && player.Password == textBox_password.Text)
                 {
                     Player = player;
-                    SavedGamesList = LogIn.Player.GetSavedGameList(LogIn.Connection.conn);
+                    SavedGamesList = Player.GetSavedGameList(Connection.conn);
                     logIn = true;
                     break;
-
                 }
             }
 
@@ -57,7 +57,10 @@ namespace SudokuApplication
             {
                 MessageBox.Show("Incorrect username or password!");
             }
-            
+        }
+        private void button_login_Click(object sender, EventArgs e)
+        {
+            LogInFunction();            
         }
 
         private void button_signup_Click(object sender, EventArgs e)
@@ -90,6 +93,13 @@ namespace SudokuApplication
                         
         }
 
+        private void textBox_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                LogInFunction();
+            }
+        }
     }
     
 }

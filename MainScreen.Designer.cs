@@ -130,6 +130,7 @@
             this.Controls.Add(this.button_loadGame);
             this.Controls.Add(this.button_newGame);
             this.Controls.Add(this.label_hi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "MainScreen";

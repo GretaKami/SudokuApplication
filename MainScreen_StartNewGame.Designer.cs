@@ -158,6 +158,7 @@
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_startGame);
             this.Controls.Add(this.groupBox_gameDifficulty);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "MainScreen_StartNewGame";
