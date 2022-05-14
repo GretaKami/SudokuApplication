@@ -35,6 +35,7 @@
             this.Solved = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button_back = new System.Windows.Forms.Button();
             this.button_startGame = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -87,7 +88,7 @@
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.ForeColor = System.Drawing.Color.White;
-            this.button_back.Location = new System.Drawing.Point(264, 363);
+            this.button_back.Location = new System.Drawing.Point(301, 363);
             this.button_back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(123, 41);
@@ -105,7 +106,7 @@
             this.button_startGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_startGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_startGame.ForeColor = System.Drawing.Color.Aqua;
-            this.button_startGame.Location = new System.Drawing.Point(83, 363);
+            this.button_startGame.Location = new System.Drawing.Point(39, 363);
             this.button_startGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_startGame.Name = "button_startGame";
             this.button_startGame.Size = new System.Drawing.Size(123, 41);
@@ -116,12 +117,30 @@
             this.button_startGame.MouseEnter += new System.EventHandler(this.button_MouseEnter);
             this.button_startGame.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
+            // button_delete
+            // 
+            this.button_delete.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_delete.ForeColor = System.Drawing.Color.White;
+            this.button_delete.Location = new System.Drawing.Point(168, 363);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(123, 41);
+            this.button_delete.TabIndex = 9;
+            this.button_delete.Text = "Delete";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            this.button_delete.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.button_delete.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
             // MainScreen_LoadGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(461, 453);
+            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_startGame);
             this.Controls.Add(this.listView_loadGame);
@@ -147,5 +166,6 @@
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Difficulty;
         private System.Windows.Forms.ColumnHeader Solved;
+        private System.Windows.Forms.Button button_delete;
     }
 }

@@ -52,7 +52,7 @@ namespace SudokuApplication
         }
         
 
-        public void GetEnteredGridNumbers(Button[,] cells)
+        private void GetEnteredGridNumbers(Button[,] cells)
         {
             for(int row=0; row < 9; row++)
             {
@@ -101,8 +101,9 @@ namespace SudokuApplication
             
         }
 
-        public void SaveGame(SqlConnection connection)
+        public void SaveGame(SqlConnection connection, Button[,] cells)
         {
+            GetEnteredGridNumbers(cells);
            
             string originalShownGridNumbersString = "";
             string originalGridValuesString = "";
@@ -129,7 +130,7 @@ namespace SudokuApplication
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Game saved");
+                MessageBox.Show("Game saved successfully!");
             }
             catch (Exception ex)
             {
@@ -152,6 +153,32 @@ namespace SudokuApplication
             {
                 MessageBox.Show("Error - " + ex.Message);
             }
+        }
+
+        public void UpdateSavedGame(SqlConnection connection, Button[,] cells)
+        {
+            GetEnteredGridNumbers(cells);
+
+            string enteredGridValuesString = "";
+
+            for (int row = 0; row < 9; row++)
+            {
+                for (int col = 0; col < 9; col++)
+                {
+                    enteredGridValuesString += EnteredGridNumbers[row, col].ToString();
+                }
+            }
+
+            string query = $"UPDATE dbo.saved_games SET enteredGridNumbers_string='{enteredGridValuesString}' " +
+                           $"WHERE ID={ID}";
+            
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try { 
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Game saved successfully!");
+            }
+            catch (SqlException ex) { MessageBox.Show("Error - " + ex.Message); }
         }
 
         

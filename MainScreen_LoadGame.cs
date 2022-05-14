@@ -15,6 +15,12 @@ namespace SudokuApplication
         public MainScreen_LoadGame()
         {
             InitializeComponent();
+            LoadItemsToListView();    
+            
+        }
+
+        private void LoadItemsToListView()
+        {
             LogIn.SavedGamesList = LogIn.Player.GetSavedGameList(LogIn.Connection.conn);
 
             foreach (Gameboard savedGame in LogIn.SavedGamesList)
@@ -22,12 +28,10 @@ namespace SudokuApplication
                 ListViewItem item = new ListViewItem(savedGame.ID.ToString());
                 item.SubItems.Add(savedGame.DifficultyString);
                 item.SubItems.Add(savedGame.SolvedPart);
-                
-                listView_loadGame.Items.Add(item);
-            }           
-            
-        }
 
+                listView_loadGame.Items.Add(item);
+            }
+        }
 
         private bool closeApplication = true;
         
@@ -46,6 +50,23 @@ namespace SudokuApplication
             new Form1().Show();
             this.Close();
             
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            int selectedGameID = Convert.ToInt32(listView_loadGame.SelectedItems[0].SubItems[0].Text);
+
+            foreach(Gameboard savedGame in LogIn.SavedGamesList)
+            {
+                if(selectedGameID == savedGame.ID)
+                {
+                    savedGame.DeleteSavedGame(LogIn.Connection.conn);
+                    MessageBox.Show("Game deleted successfully!");
+                }
+            }
+
+            listView_loadGame.Items.Clear();
+            LoadItemsToListView();
         }
 
         private void button_back_Click(object sender, EventArgs e)

@@ -136,9 +136,18 @@ namespace SudokuApplication
         private void button_saveGame_Click(object sender, EventArgs e)
         {
             closeApplication = false;
-            Gameboard game = new Gameboard(LogIn.Player, gridNumbers.cellValues, gridNumbers.originalShownGridValues);
-            game.GetEnteredGridNumbers(cells);
-            game.SaveGame(LogIn.Connection.conn);
+
+            if (LogIn.Player.selectedGameID != 0) // saves new game on top of the old save file
+            {
+                selectedSavedGame.UpdateSavedGame(LogIn.Connection.conn, cells);
+                LogIn.Player.selectedGameID = 0;
+            }
+            else
+            {
+                Gameboard game = new Gameboard(LogIn.Player, gridNumbers.cellValues, gridNumbers.originalShownGridValues);
+                game.SaveGame(LogIn.Connection.conn, cells);
+            }
+            
 
             new MainScreen().Show();
             this.Close();
