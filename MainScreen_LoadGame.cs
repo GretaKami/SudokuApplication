@@ -47,7 +47,7 @@ namespace SudokuApplication
             LogIn.Player.selectedGameID = selectedGameID;
             closeApplication = false;
 
-            new Form1().Show();
+            new GameScreen().Show();
             this.Close();
             
         }

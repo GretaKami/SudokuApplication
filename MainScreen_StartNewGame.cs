@@ -22,7 +22,7 @@ namespace SudokuApplication
         private void button_startGame_Click(object sender, EventArgs e)
         {
             closeApplication = false;
-            new Form1().Show();
+            new GameScreen().Show();
             this.Close();
             // add functionality to generate new game
         }

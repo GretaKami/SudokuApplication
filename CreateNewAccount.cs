@@ -17,9 +17,6 @@ namespace SudokuApplication
         public CreateNewAccount()
         {
             InitializeComponent();
-            toolTip_passwordInfo.SetToolTip(label2, "Password can contain only letters and numbers!" +
-                "\nIt must be at least 5 characters long" +
-                "\nand needs to contain at least 1 number and 1 upper case letter!");
         }
 
         private void button_signUp_Click(object sender, EventArgs e)
@@ -32,6 +29,7 @@ namespace SudokuApplication
             
 
             Regex regex = new Regex("((\\w*[A-Z]+?\\w*)(\\w*\\d+?\\w*))|((\\w*\\d+?\\w*)(\\w*[A-Z]+?\\w*))");
+            Regex regex2 = new Regex("\\W");
 
             if(textBox_name.Text == String.Empty || textBox_username.Text == String.Empty
                 || textBox_password.Text == String.Empty || textBox_repeatPassword.Text == String.Empty)
@@ -49,6 +47,12 @@ namespace SudokuApplication
                 MessageBox.Show("Password must be at least 5 characters long!");
                 label_password.ForeColor= Color.Gold;
                 label_passwordRule.Text = "Password must be at least 5 characters long!";
+                label_passwordRule.Visible = true;
+            }
+            else if (regex2.IsMatch(textBox_password.Text)){
+                MessageBox.Show("Password can contain only letters and numbers!");
+                label_password.ForeColor = Color.Gold;
+                label_passwordRule.Text = "Password can contain only letters and numbers!";
                 label_passwordRule.Visible = true;
             }
             else if (!regex.IsMatch(textBox_password.Text))
@@ -86,6 +90,12 @@ namespace SudokuApplication
 
         }
 
+        private void button_passwordInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Password can contain only letters and numbers!" +
+                "\nIt must be at least 5 characters long and" +
+                "\nneeds to contain at least 1 number and 1 upper case letter!");
+        }
         private void CreateNewAccount_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(closeApplication) { Application.Exit(); }
@@ -111,5 +121,6 @@ namespace SudokuApplication
 
         }
 
+        
     }
 }

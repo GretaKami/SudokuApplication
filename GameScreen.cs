@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SudokuApplication
 {
-    public partial class Form1 : Form
+    public partial class GameScreen : Form
     {
         private Button[,] cells;
         private bool closeApplication = true;
@@ -18,7 +18,7 @@ namespace SudokuApplication
         private GameLogic gridNumbers;
         private Gameboard selectedSavedGame;
 
-        public Form1()
+        public GameScreen()
         {
             InitializeComponent();
 
@@ -125,6 +125,9 @@ namespace SudokuApplication
                 }
                 
                 panel_finishedGame.Visible = true;
+
+                timer1.Start();
+                pictureBox1.Visible = true;
                 button_checkGame.Enabled = false;
                 button_saveGame.Enabled = false;
                 button_back.Enabled = false;
@@ -200,7 +203,13 @@ namespace SudokuApplication
             if(closeApplication) { Application.Exit(); }
         }
 
-        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            pictureBox1.Visible = false;
+        }
+
+
 
 
 

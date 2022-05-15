@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen_StartNewGame));
             this.groupBox_gameDifficulty = new System.Windows.Forms.GroupBox();
             this.button_difficultyHard = new System.Windows.Forms.Button();
             this.button_difficultyMedium = new System.Windows.Forms.Button();
@@ -46,11 +47,11 @@
             this.groupBox_gameDifficulty.Controls.Add(this.button_difficultyEasy);
             this.groupBox_gameDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_gameDifficulty.ForeColor = System.Drawing.Color.White;
-            this.groupBox_gameDifficulty.Location = new System.Drawing.Point(31, 198);
-            this.groupBox_gameDifficulty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox_gameDifficulty.Location = new System.Drawing.Point(23, 161);
+            this.groupBox_gameDifficulty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox_gameDifficulty.Name = "groupBox_gameDifficulty";
-            this.groupBox_gameDifficulty.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox_gameDifficulty.Size = new System.Drawing.Size(396, 100);
+            this.groupBox_gameDifficulty.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_gameDifficulty.Size = new System.Drawing.Size(297, 81);
             this.groupBox_gameDifficulty.TabIndex = 4;
             this.groupBox_gameDifficulty.TabStop = false;
             this.groupBox_gameDifficulty.Text = "Game difficulty";
@@ -61,10 +62,10 @@
             this.button_difficultyHard.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_difficultyHard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_difficultyHard.ForeColor = System.Drawing.Color.Black;
-            this.button_difficultyHard.Location = new System.Drawing.Point(275, 39);
-            this.button_difficultyHard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_difficultyHard.Location = new System.Drawing.Point(206, 32);
+            this.button_difficultyHard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_difficultyHard.Name = "button_difficultyHard";
-            this.button_difficultyHard.Size = new System.Drawing.Size(93, 37);
+            this.button_difficultyHard.Size = new System.Drawing.Size(70, 30);
             this.button_difficultyHard.TabIndex = 2;
             this.button_difficultyHard.Text = "Hard";
             this.button_difficultyHard.UseVisualStyleBackColor = false;
@@ -76,10 +77,10 @@
             this.button_difficultyMedium.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_difficultyMedium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_difficultyMedium.ForeColor = System.Drawing.Color.Black;
-            this.button_difficultyMedium.Location = new System.Drawing.Point(151, 39);
-            this.button_difficultyMedium.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_difficultyMedium.Location = new System.Drawing.Point(113, 32);
+            this.button_difficultyMedium.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_difficultyMedium.Name = "button_difficultyMedium";
-            this.button_difficultyMedium.Size = new System.Drawing.Size(93, 37);
+            this.button_difficultyMedium.Size = new System.Drawing.Size(70, 30);
             this.button_difficultyMedium.TabIndex = 1;
             this.button_difficultyMedium.Text = "Medium";
             this.button_difficultyMedium.UseVisualStyleBackColor = false;
@@ -91,10 +92,10 @@
             this.button_difficultyEasy.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_difficultyEasy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_difficultyEasy.ForeColor = System.Drawing.Color.Black;
-            this.button_difficultyEasy.Location = new System.Drawing.Point(28, 39);
-            this.button_difficultyEasy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_difficultyEasy.Location = new System.Drawing.Point(21, 32);
+            this.button_difficultyEasy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_difficultyEasy.Name = "button_difficultyEasy";
-            this.button_difficultyEasy.Size = new System.Drawing.Size(93, 37);
+            this.button_difficultyEasy.Size = new System.Drawing.Size(70, 30);
             this.button_difficultyEasy.TabIndex = 0;
             this.button_difficultyEasy.Text = "Easy";
             this.button_difficultyEasy.UseVisualStyleBackColor = false;
@@ -107,10 +108,10 @@
             this.button_startGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_startGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_startGame.ForeColor = System.Drawing.Color.Aqua;
-            this.button_startGame.Location = new System.Drawing.Point(72, 358);
-            this.button_startGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_startGame.Location = new System.Drawing.Point(54, 291);
+            this.button_startGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_startGame.Name = "button_startGame";
-            this.button_startGame.Size = new System.Drawing.Size(123, 41);
+            this.button_startGame.Size = new System.Drawing.Size(92, 33);
             this.button_startGame.TabIndex = 5;
             this.button_startGame.Text = "Start !";
             this.button_startGame.UseVisualStyleBackColor = true;
@@ -124,10 +125,10 @@
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.ForeColor = System.Drawing.Color.White;
-            this.button_back.Location = new System.Drawing.Point(253, 358);
-            this.button_back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_back.Location = new System.Drawing.Point(190, 291);
+            this.button_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(123, 41);
+            this.button_back.Size = new System.Drawing.Size(92, 33);
             this.button_back.TabIndex = 6;
             this.button_back.Text = "Back";
             this.button_back.UseVisualStyleBackColor = true;
@@ -141,25 +142,25 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(461, 144);
+            this.label1.Size = new System.Drawing.Size(346, 117);
             this.label1.TabIndex = 7;
             this.label1.Text = "Please choose the difficulty level!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // MainScreen_StartNewGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(461, 453);
+            this.ClientSize = new System.Drawing.Size(346, 368);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_startGame);
             this.Controls.Add(this.groupBox_gameDifficulty);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "MainScreen_StartNewGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
