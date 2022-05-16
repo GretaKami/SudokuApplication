@@ -38,7 +38,17 @@ namespace SudokuApplication
 
         private void listView_loadGame_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            button_startGame.Enabled = true;
+            if (e.IsSelected)
+            {
+                button_startGame.Enabled = true;
+                button_delete.Enabled = true;
+            }
+            else
+            {
+                button_startGame.Enabled = false;
+                button_delete.Enabled = false;
+            }
+            
         }
 
         private void button_startGame_Click(object sender, EventArgs e)

@@ -44,8 +44,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 101);
+            this.label1.Size = new System.Drawing.Size(461, 124);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please select the game you want to load!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -58,10 +59,11 @@
             this.Solved});
             this.listView_loadGame.FullRowSelect = true;
             this.listView_loadGame.HideSelection = false;
-            this.listView_loadGame.Location = new System.Drawing.Point(29, 144);
+            this.listView_loadGame.Location = new System.Drawing.Point(39, 177);
+            this.listView_loadGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView_loadGame.MultiSelect = false;
             this.listView_loadGame.Name = "listView_loadGame";
-            this.listView_loadGame.Size = new System.Drawing.Size(290, 120);
+            this.listView_loadGame.Size = new System.Drawing.Size(385, 147);
             this.listView_loadGame.TabIndex = 1;
             this.listView_loadGame.UseCompatibleStateImageBehavior = false;
             this.listView_loadGame.View = System.Windows.Forms.View.Details;
@@ -87,10 +89,10 @@
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_back.ForeColor = System.Drawing.Color.White;
-            this.button_back.Location = new System.Drawing.Point(226, 295);
-            this.button_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_back.Location = new System.Drawing.Point(301, 363);
+            this.button_back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(92, 33);
+            this.button_back.Size = new System.Drawing.Size(123, 41);
             this.button_back.TabIndex = 8;
             this.button_back.Text = "Back";
             this.button_back.UseVisualStyleBackColor = true;
@@ -105,10 +107,10 @@
             this.button_startGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_startGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_startGame.ForeColor = System.Drawing.Color.Aqua;
-            this.button_startGame.Location = new System.Drawing.Point(29, 295);
-            this.button_startGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_startGame.Location = new System.Drawing.Point(39, 363);
+            this.button_startGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_startGame.Name = "button_startGame";
-            this.button_startGame.Size = new System.Drawing.Size(92, 33);
+            this.button_startGame.Size = new System.Drawing.Size(123, 41);
             this.button_startGame.TabIndex = 7;
             this.button_startGame.Text = "Start!";
             this.button_startGame.UseVisualStyleBackColor = true;
@@ -118,14 +120,15 @@
             // 
             // button_delete
             // 
+            this.button_delete.Enabled = false;
             this.button_delete.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_delete.ForeColor = System.Drawing.Color.White;
-            this.button_delete.Location = new System.Drawing.Point(126, 295);
-            this.button_delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_delete.Location = new System.Drawing.Point(168, 363);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(92, 33);
+            this.button_delete.Size = new System.Drawing.Size(123, 41);
             this.button_delete.TabIndex = 9;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = true;
@@ -135,10 +138,10 @@
             // 
             // MainScreen_LoadGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(346, 368);
+            this.ClientSize = new System.Drawing.Size(461, 453);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_startGame);
@@ -147,6 +150,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainScreen_LoadGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
